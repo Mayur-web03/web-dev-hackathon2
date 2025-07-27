@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>VendorConnect</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">VendorConnect</div>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="#vendor">Dashboard</a></li>
+                <li><a href="#dealer">Dealer</a></li>
+                <li><a href="#admin">Admin</a></li>
+                <li><a href="#purchaseHistory" id="purchaseHistoryLink">Purchase History</a></li>
+            </ul>
+            <button class="icon-btn" id="cartIcon">
+                <span class="material-icons">shopping_cart</span>
+                <span id="cartItemCount">0</span>
+            </button>
+            <button class="icon-btn" id="modeToggle">
+                <span class="material-icons">light_mode</span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <h1>Connect. Buy. Grow.</h1>
+        <p>A platform for street vendors to connect with dealers, purchase goods, and earn rewards.</p>
+        <a href="#" class="btn" id="getStartedBtn">Get Started</a>
+    </header>
+
+    <section id="vendor" class="dashboard-section">
+        <h2>Vendor Dashboard</h2>
+        <p>Welcome, Vendor! Explore products, connect with dealers, and manage your purchases.</p>
+
+        <div class="product-filter-container">
+            <h3>Our Products</h3>
+            <div class="filter-buttons">
+                <button class="btn filter-btn active" data-filter="all">All Products</button>
+                <button class="btn filter-btn" data-filter="groceries">Groceries</button>
+                <button class="btn filter-btn" data-filter="snacks-drinks">Snacks & Drinks</button>
+            </div>
+        </div>
+
+        <div class="product-grid" id="allProductsGrid">
+            <div class="product-card" data-category="groceries">
+                <img src="./tomato.jpg" alt="Fresh Tomatoes" />
+                <h3>Fresh Tomatoes</h3>
+                <p>Organic red tomatoes, perfect for cooking.</p>
+                <p><strong>Price:</strong> ₹<span class="product-price">50</span>/kg</p>
+                <p class="offer-text"><strong>Offer:</strong> 10% off today!</p>
+                <button class="btn buy-btn" data-product-name="Fresh Tomatoes" data-product-price="50">Add to Cart</button>
+            </div>
+            <div class="product-card" data-category="groceries">
+                <img src="./potato2.jpg" alt="Potatoes" />
+                <h3>Potatoes</h3>
+                <p>Premium quality potatoes for daily use.</p>
+                <p><strong>Price:</strong> ₹<span class="product-price">40</span>/kg</p>
+                <p class="offer-text"><strong>Offer:</strong> 5% off today!</p>
+                <button class="btn buy-btn" data-product-name="Potatoes" data-product-price="40">Add to Cart</button>
+            </div>
+            <div class="product-card" data-category="groceries">
+                <img src="./onion.jpg" alt="Onions" />
+                <h3>Onions</h3>
+                <p>Locally sourced fresh onions.</p>
+                <p><strong>Price:</strong> ₹<span class="product-price">45</span>/kg</p>
+                <p class="offer-text"><strong>Offer:</strong> 15% off today!</p>
+                <button class="btn buy-btn" data-product-name="Onions" data-product-price="45">Add to Cart</button>
+            </div>
+            <div class="product-card" data-category="groceries">
+                <img src="./spinach.jpg" alt="Spinach" />
+                <h3>Spinach</h3>
+                <p>Green leafy spinach, great for health.</p>
+                <p><strong>Price:</strong> ₹<span class="product-price">30</span>/bunch</p>
+                <p class="offer-text"><strong>Offer:</strong> Buy 1 Get 1 Free</p>
+                <button class="btn buy-btn" data-product-name="Spinach" data-product-price="30">Add to Cart</button>
+            </div>
+            <div class="product-card" data-category="groceries">
+                <img src="./carrot.jpg" alt="Carrots" />
+                <h3>Carrots</h3>
+                <p>Fresh, sweet carrots for all dishes.</p>
+                <p><strong>Price:</strong> ₹<span class="product-price">60</span>/kg</p>
+                <p class="offer-text">No current offers.</p>
+                <button class="btn buy-btn" data-product-name="Carrots" data-product-price="60">Add to Cart</button>
+            </div>
+            <div class="product-card" data-category="groceries">
+                <img src="./cabbage.jpg" alt="Cabbage" />
+                <h3>Cabbage</h3>
+                <p>Crisp green cabbage, ideal for salads.</p>
+                <p><strong>Price:</strong> ₹<span class="product-price">35</span>/piece</p>
+                <p class="offer-text">Seasonal discount!</p>
+                <button class="btn buy-btn" data-product-name="Cabbage" data-product-price="35">Add to Cart</button>
+            </div>
+            <div class="product-card" data-category="groceries">
+                <img src="./apple.jpg" alt="Apple" />
+                <h3>Apple</h3>
+                <p>Good for health.</p>
+                <p><strong>Price:</strong> ₹<span class="product-price">40</span>/kg</p>
+                <p class="offer-text">Special discount!</p>
+                <button class="btn buy-btn" data-product-name="Apple" data-product-price="40">Add to Cart</button>
+            </div>
+            <div class="product-card" data-category="groceries">
+                <img src="./orange.jpg " alt="Orange" />
+                <h3>Orange</h3>
+                <p>Sweet and natural.</p>
+                <p><strong>Price:</strong> ₹<span class="product-price">40</span>/kg</p>
+                <p class="offer-text">Special discount!</p>
+                <button class="btn buy-btn" data-product-name="Orange" data-product-price="40">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="snacks-drinks">
+                <img src="./PotatoChips.jpg" alt="Potato Chips" />
+                <h3>Potato Chips</h3>
+                <p>Crispy, salted potato chips.</p>
+                <p><strong>Price:</strong> ₹<span class="product-price">20</span>/pack</p>
+                <p class="offer-text">Buy 3 Get 1 Free</p>
+                <button class="btn buy-btn" data-product-name="Potato Chips" data-product-price="20">Add to Cart</button>
+            </div>
+            <div class="product-card" data-category="snacks-drinks">
+                <img src="./cocacola.jpg" alt="Soft Drink" />
+                <h3>Coca Cola</h3>
+                <p>Refreshing cola drink (250ml).</p>
+                <p><strong>Price:</strong> ₹<span class="product-price">30</span>/bottle</p>
+                <p class="offer-text">Cool offer!</p>
+                <button class="btn buy-btn" data-product-name="Soft Drink" data-product-price="30">Add to Cart</button>
+            </div>
+            <div class="product-card" data-category="snacks-drinks">
+                <img src="./oreo.jpg " alt="Biscuits" />
+                <h3>Oreo Biscuits</h3>
+                <p>Sweet and savory mix.</p>
+                <p><strong>Price:</strong> ₹<span class="product-price">40</span>/pack</p>
+                <p class="offer-text">New stock!</p>
+                <button class="btn buy-btn" data-product-name="Oreo Biscuits" data-product-price="40">Add to Cart</button>
+            </div>
+            <div class="product-card" data-category="snacks-drinks">
+                <img src="./water bottle.jpg" alt="Water Bottle" />
+                <h3>Water Bottle</h3>
+                <p>Pure drinking water (1L).</p>
+                <p><strong>Price:</strong> ₹<span class="product-price">20</span>/bottle</p>
+                <p class="offer-text">Stay hydrated!</p>
+                <button class="btn buy-btn" data-product-name="Water Bottle" data-product-price="20">Add to Cart</button>
+            </div>
+            <div class="product-card" data-category="snacks-drinks">
+                <img src="./sprite.jpg" alt="Sprite" />
+                <h3>Sprite</h3>
+                <p>Lemon-lime flavored soft drink.</p>
+                <p><strong>Price:</strong> ₹<span class="product-price">35</span>/bottle</p>
+                <p class="offer-text">Refreshing deal!</p>
+                <button class="btn buy-btn" data-product-name="Sprite" data-product-price="35">Add to Cart</button>
+            </div>
+            <div class="product-card" data-category="snacks-drinks">
+                <img src="./frooti.jpg" alt="Frooti" />
+                <h3>Frooti</h3>
+                <p>Sweet mango flavored drink.</p>
+                <p><strong>Price:</strong> ₹<span class="product-price">25</span>/pack</p>
+                <p class="offer-text">Seasonal special!</p>
+                <button class="btn buy-btn" data-product-name="Frooti" data-product-price="25">Add to Cart</button>
+            </div>
+            <div class="product-card" data-category="snacks-drinks">
+                <img src="./cold coffee.jpg" alt="Cold Coffee" />
+                <h3>Cold Coffee</h3>
+                <p>Chilled coffee indulgence.</p>
+                <p><strong>Price:</strong> ₹<span class="product-price">60</span>/cup</p>
+                <p class="offer-text">Energize yourself!</p>
+                <button class="btn buy-btn" data-product-name="Cold Coffee" data-product-price="60">Add to Cart</button>
+            </div>
+            <div class="product-card" data-category="snacks-drinks">
+                <img src="./tea.jpg" alt="Tea" />
+                <h3>Tea </h3>
+                <p>Pre-packaged iced tea.</p>
+                <p><strong>Price:</strong> ₹<span class="product-price">20</span>/pack</p>
+                <p class="offer-text">Classic taste!</p>
+                <button class="btn buy-btn" data-product-name="Tea" data-product-price="20">Add to Cart</button>
+            </div>
+            <div class="product-card" data-category="snacks-drinks">
+                <img src="./good day.jpg " alt="Biscuits" />
+                <h3>Good Day</h3>
+                <p>Have a good day.</p>
+                <p><strong>Price:</strong> ₹<span class="product-price">10</span>/pack</p>
+                <p class="offer-text">New stock!</p>
+                <button class="btn buy-btn" data-product-name="Good Day" data-product-price="40">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="dealer" class="dashboard-section">
+        <h2>Nearby Dealers</h2>
+        <div class="dealer-section">
+            <div class="dealer-card">
+                <div class="dealer-info">
+                    <h4>Om Supermarket</h4>
+                    <p>Fresh groceries available daily</p>
+                </div>
+                <div class="dealer-distance">1 km 🛒</div>
+            </div>
+            <div class="dealer-card">
+                <div class="dealer-info">
+                    <h4>City Mart</h4>
+                    <p>Wholesale prices for vendors</p>
+                </div>
+                <div class="dealer-distance">1.2 km 🏪</div>
+            </div>
+            <div class="dealer-card">
+                <div class="dealer-info">
+                    <h4>Green Basket</h4>
+                    <p>Organic fruits and veggies</p>
+                </div>
+                <div class="dealer-distance">1.5 km 🧺</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="purchaseHistory" class="dashboard-section">
+        <h2>Your Purchase History</h2>
+        <div id="purchaseTableContainer">
+            <p class="no-history">No purchase history yet. Start buying to see your transactions here!</p>
+            <table style="display: none;">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Product</th>
+                        <th>Price (₹)</th>
+                        <th>Reward Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div class="total-rewards-display" style="display: none;">
+                <h3>Total Reward Points: <span id="totalRewardPoints">0</span> 🎁</h3>
+            </div>
+            <button class="btn clear-history-btn" id="clearPurchaseHistoryBtn" style="background-color: #f44336; margin-top: 1.5em;">Clear Purchase History</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 VendorConnect. All rights reserved.</p>
+    </footer>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="cartCloseButton">&times;</span>
+            <h3>Your Cart</h3>
+            <div id="cartItems">
+                <p id="emptyCartMessage" style="display: none;">Your cart is empty.</p>
+                <ul id="cartList"></ul>
+            </div>
+            <p style="font-weight: bold; margin-top: 1em;">Total: ₹<span id="cartTotal">0</span></p>
+            <button class="btn" id="checkoutBtn">Checkout</button>
+            <button class="btn clear-cart-btn" id="clearCartBtn" style="background-color: #f44336; margin-top: 0.5em;">Clear Cart</button>
+        </div>
+    </div>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Vendor Login</h3>
+            <input type="text" id="username" placeholder="Username" required />
+            <input type="password" id="password" placeholder="Password" required />
+            <button class="btn" id="modalLoginBtn">Login</button>
+            <p class="signup-link">Don't have an account? <a href="#">Sign Up</a></p>
+        </div>
+    </div>
+
+    <div id="invoiceModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="invoiceCloseButton">&times;</span>
+            <h3>Purchase Invoice</h3>
+            <div id="invoiceDetails">
+                <p><strong>Invoice ID:</strong> <span id="invoiceId"></span></p>
+                <p><strong>Date:</strong> <span id="invoiceDate"></span></p>
+                <hr>
+                <h4>Items Purchased:</h4>
+                <ul id="invoiceItemList">
+                </ul>
+                <hr>
+                <p style="font-size: 1.2em; font-weight: bold;">Grand Total: ₹<span id="invoiceGrandTotal"></span></p>
+                <p class="invoice-rewards">Reward Points Earned: <span id="invoiceRewardPoints">0</span> 🎁</p>
+                <button class="btn print-invoice-btn" id="printInvoiceBtn">Print Invoice</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
